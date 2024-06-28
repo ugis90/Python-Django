@@ -1,0 +1,25 @@
+{% extends "mining/base.html" %}
+
+{% block title %}Advertisement List{% endblock %}
+
+{% block content %}
+    <h1>Advertisement List</h1>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Advertiser</th>
+            <th>Publication Date</th>
+            <th>Submission Deadline</th>
+            <th>BVPŽ Code</th>
+        </tr>
+        {% for ad in ads %}
+            <tr>
+                <td>{{ ad.title }}</td>
+                <td><a href="{{ ad.advertiser_link }}">{{ ad.advertiser_name }}</a></td>
+                <td>{{ ad.publication_date }}</td>
+                <td>{{ ad.submission_deadline }}</td>
+                <td>{{ ad.bvpz_code }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
